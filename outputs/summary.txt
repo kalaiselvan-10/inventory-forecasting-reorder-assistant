@@ -1,0 +1,33 @@
+INVENTORY FORECASTING & REORDER REPORT
+========================================
+Data cleaning: {'raw_rows': 54268, 'duplicates_removed': 519, 'missing_removed': 0, 'negative_removed': 1473, 'unknown_product_removed': 2375, 'clean_rows': 49901, 'outlier_days_capped': 150}
+
+Forecast error (mean over products, weekly demand, 8-week rolling backtest):
+                   mae    mape   wape
+method                               
+exp_smoothing   280.13  404.26  68.97
+moving_average  239.12  232.94  60.52
+Selected best-method-per-product -> MAE 236.6 units/week | MAPE 231.0% (median across products 61.46%) | WAPE 59.2%
+
+Status counts:
+status
+OK              21
+CRITICAL        11
+REORDER SOON    10
+REORDER NOW      8
+
+Top 10 priority items:
+ priority product_id                       product_name  current_stock  reorder_point  days_of_cover   status  suggested_order_qty
+        1      22355          CHARLOTTE BAG SUKI DESIGN          273.0           1817            2.1 CRITICAL                 3352
+        2      21929     JUMBO BAG PINK VINTAGE PAISLEY           70.0            373            2.8 CRITICAL                  647
+        3      20724        RED RETROSPOT CHARLOTTE BAG          323.0           1566            3.2 CRITICAL                 2661
+        4      22411  JUMBO SHOPPER VINTAGE RED PAISLEY          183.0            731            4.1 CRITICAL                 1172
+        5      21731      RED TOADSTOOL LED NIGHT LIGHT          200.0            820            4.3 CRITICAL                 1278
+        6     85123A WHITE HANGING HEART T-LIGHT HOLDER          498.0           2042            5.1 CRITICAL                 2906
+        7      20713                     JUMBO BAG OWLS          174.0            723            5.3 CRITICAL                 1005
+        8      84077  WORLD WAR 2 GLIDERS ASSTD DESIGNS         1212.0           2532            7.9 CRITICAL                 3466
+        9      20728                LUNCH BAG CARS BLUE          111.0            296            8.4 CRITICAL                  371
+       10      21181       PLEASE ONE PERSON METAL SIGN         1094.0           1965           12.3 CRITICAL                 2115
+
+Slow-moving: 15036, 22386, 84978, 21790, 85099B, 22659, 22492, 85099F, 21175, 21915
+Stockout-prone: 22355, 21929, 20724, 22411, 21731, 85123A, 20713, 84077, 20728, 21181, 20719, 22629, 22630, 22469, 22998, 84991

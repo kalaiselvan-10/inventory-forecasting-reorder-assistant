@@ -48,7 +48,7 @@ python main.py --sales s.csv --map "date=Order Date,product_id=SKU,quantity=Qty"
 - Dates are parsed month-first; exact duplicate rows are removed, so aggregate transaction data to one row per product per day first if identical repeat sales are legitimate.
 
 ## Input files (CSV or Excel)
-- `sales_history.csv`: `date, product_id, quantity` (one row per product per day with sales)
+-`sales_history.csv`: `date, product_id, quantity` (invoice lines are fine; optional invoice_no column)
 - `current_stock.csv`: `product_id, current_stock`
 - `products.csv`: `product_id, product_name, category, supplier, lead_time_days` (extra columns allowed)
 

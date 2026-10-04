@@ -1,5 +1,5 @@
 # Inventory Forecasting & Reorder Assistant
-
+![Dashboard](screenshots/ss1.png)
 Python application that analyses sales history, current stock, supplier lead times and product master data to
 forecast demand, compute safety stock / reorder points, and produce a prioritised reorder list with a dashboard.
 
